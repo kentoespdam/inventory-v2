@@ -61,6 +61,11 @@ class SmartOfficeUserProvider implements UserProviderContract
         return $validated !== null;
     }
 
+    public function rehashPasswordIfRequired(Authenticatable $user, array $credentials, bool $force = false): bool
+    {
+        return false;
+    }
+
     protected function getUserFromData(array $userData): Authenticatable
     {
         return new User([
@@ -68,6 +73,7 @@ class SmartOfficeUserProvider implements UserProviderContract
             'name' => $userData['name'] ?? $userData['username'] ?? 'User',
             'username' => $userData['username'] ?? null,
             'email' => $userData['email'] ?? null,
+            'role' => $userData['role'] ?? null,
         ]);
     }
 }

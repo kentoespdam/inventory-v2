@@ -34,7 +34,9 @@ export default function AuthenticatedLayout({ children, user, year }: Authentica
                             <span className="text-xl font-bold text-gray-800">Inventory</span>
                         </div>
 
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-6">
+                            <a href="/dashboard" className="text-sm text-gray-700 hover:text-blue-600">Dashboard</a>
+                            <a href="/orders" className="text-sm text-gray-700 hover:text-blue-600">Orders</a>
                             <select
                                 value={year}
                                 onChange={(e) => changeYear(parseInt(e.target.value))}

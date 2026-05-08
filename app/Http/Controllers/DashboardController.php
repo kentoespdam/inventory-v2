@@ -22,6 +22,10 @@ class DashboardController extends Controller
         $summary = $this->dashboardService->getSummary($year);
 
         return Inertia::render('Dashboard', [
+            'auth' => ['user' => $request->user() ? [
+                'name' => $request->user()->name,
+                'username' => $request->user()->username ?? null,
+            ] : null],
             'year' => $year,
             'summary' => $summary,
         ]);

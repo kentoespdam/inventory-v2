@@ -47,6 +47,7 @@ class LoginController extends Controller
         Auth::loginUsingId($user['id']);
 
         $request->session()->regenerate();
+        $request->session()->put('year', (int) date('Y'));
 
         return redirect()->route('dashboard');
     }

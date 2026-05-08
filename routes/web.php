@@ -14,3 +14,4 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::post('/set-year', [DashboardController::class, 'setYear'])->name('set-year')->middleware('auth');

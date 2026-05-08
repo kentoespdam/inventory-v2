@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -49,12 +49,52 @@ return [
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'laravel'),
+            'database' => env('DB_DATABASE', 'inventory'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                (PHP_VERSION_ID >= 80500 ? Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'mysql_smartoffice' => [
+            'driver' => 'mysql',
+            'url' => env('DB_SMARTOFFICE_URL'),
+            'host' => env('DB_SMARTOFFICE_HOST', '127.0.0.1'),
+            'port' => env('DB_SMARTOFFICE_PORT', '3306'),
+            'database' => env('DB_SMARTOFFICE_DATABASE', 'smartoffice'),
+            'username' => env('DB_SMARTOFFICE_USERNAME', 'root'),
+            'password' => env('DB_SMARTOFFICE_PASSWORD', ''),
+            'unix_socket' => env('DB_SMARTOFFICE_SOCKET', ''),
+            'charset' => env('DB_SMARTOFFICE_CHARSET', 'utf8mb4'),
+            'collation' => env('DB_SMARTOFFICE_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                (PHP_VERSION_ID >= 80500 ? Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'mysql_azizah' => [
+            'driver' => 'mysql',
+            'url' => env('DB_AZIZAH_URL'),
+            'host' => env('DB_AZIZAH_HOST', '127.0.0.1'),
+            'port' => env('DB_AZIZAH_PORT', '3306'),
+            'database' => env('DB_AZIZAH_DATABASE', 'azizah'),
+            'username' => env('DB_AZIZAH_USERNAME', 'root'),
+            'password' => env('DB_AZIZAH_PASSWORD', ''),
+            'unix_socket' => env('DB_AZIZAH_SOCKET', ''),
+            'charset' => env('DB_AZIZAH_CHARSET', 'utf8mb4'),
+            'collation' => env('DB_AZIZAH_COLLATION', 'utf8mb4_unicode_ci'),
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
